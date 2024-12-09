@@ -20,11 +20,12 @@ Exporting results ...
 Execution time: 38.032226708 seconds
 ```
 ***
+*1 - Crear entorno virtual de python3*
 
-*1 - Comandos a ejecutar para lanzar el proceso* 
+*2 - Comandos a ejecutar para lanzar el proceso* 
 ```. venv/bin/activate``` --> ```pip install -r requirements.txt``` --> ```python main.py```
 ***
-*2 - Para lanzar los test ejecutar ```pytest```*
+*3 - Para lanzar los test ejecutar ```pytest```*
 ***
-*3 - Los test son un pequeño ejemplo para que se vea la utilización de pytest*
+*4 - Los test son un pequeño ejemplo para que se vea la utilización de pytest*
 
