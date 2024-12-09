@@ -118,6 +118,7 @@ class YellowTaxiData:
         self.data['trip_time'] = self.data['tpep_dropoff_datetime'] - self.data['tpep_pickup_datetime']
         self.data['trip_time_in_seconds'] = self.data['trip_time'].dt.total_seconds()
 
+        # TODO: Change apply methods
         self.weeks_ranges['min_trip_time'] = self.weeks_ranges.apply(
             lambda x: get_min_for_field(x, 'trip_time_in_seconds'), axis=1
         )
