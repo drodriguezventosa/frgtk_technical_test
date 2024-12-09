@@ -66,7 +66,11 @@ class YellowTaxiData:
         df = pd.DataFrame(self.end_date_weeks, columns=['end_week'])
         df['start_week'] = df['end_week'] - pd.to_timedelta(df['end_week'].dt.weekday, unit='D')
 
-        if df['end_week'].iloc[-1] < pd.to_datetime(self.end_date):
+        if df.loc[0]['start_week'] != self.start_date: # Remove week if start_date is the first day of week
+            df.drop(index=0, inplace=True)
+            df.reset_index(drop=True, inplace=True)
+
+        """if df['end_week'].iloc[-1] < pd.to_datetime(self.end_date):
             df = pd.concat([
                 df,
                 pd.DataFrame({
@@ -75,7 +79,7 @@ class YellowTaxiData:
                                                                             unit='D')],
                     'end_week': [pd.to_datetime(self.end_date)]
                 })
-            ], ignore_index=True)
+            ], ignore_index=True)"""
 
         self.weeks_ranges = df.copy()
         self.weeks_ranges = self.weeks_ranges[['start_week', 'end_week']]
