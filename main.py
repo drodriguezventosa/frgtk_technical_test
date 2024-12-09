@@ -59,6 +59,8 @@ class YellowTaxiData:
         self.data = self.data[self.data['trip_distance'] > 0]
         self.data = self.data[(self.data['total_amount'] > 0) & (self.data['total_amount'] <= 5000)]
 
+        self.data = self.data[self.data['passenger_count'] > 0]
+
 
     def generate_weeks(self):
         df = pd.DataFrame(self.end_date_weeks, columns=['end_week'])
