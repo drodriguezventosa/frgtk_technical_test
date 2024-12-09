@@ -29,6 +29,8 @@ class YellowTaxiData:
         ]
 
         self.data = pd.concat(dataframes_list, ignore_index=True)
+        self.data = self.data[['tpep_pickup_datetime', 'tpep_dropoff_datetime', 'passenger_count', 'trip_distance',
+                               'RatecodeID','total_amount']] # Filter columns, only necessary columns
         self.data.set_index(['tpep_pickup_datetime', 'tpep_dropoff_datetime', 'RatecodeID'],
                             inplace=True, drop=False)
 
