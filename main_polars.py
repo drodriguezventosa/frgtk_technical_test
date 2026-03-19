@@ -1,5 +1,4 @@
 import polars as pl
-import numpy as np
 import time
 from concurrent.futures import ThreadPoolExecutor
 
