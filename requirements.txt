@@ -36,3 +36,4 @@ tzdata==2024.2
 urllib3==2.2.3
 yarl==1.17.1
 zipp==3.21.0
+polars==1.20.0
